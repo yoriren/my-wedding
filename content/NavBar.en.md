@@ -1,4 +1,4 @@
 ---
-brand: "Start Bootstrap"
+brand: "Jun&Ireen"
 menuText: "Menu "
 ---

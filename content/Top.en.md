@@ -1,7 +1,7 @@
 ---
-header: "It's Nice To Meet You"
-subheader: "Welcome To Our Studio!"
-imageFileName: "header-bg.jpg"
-jumpToAnchor: "Services"
-jumpToAnchorText: "Tell Me More"
+header: "Jun & Ireen"
+subheader: "18 SEPT 2022"
+imageFileName: "DSC02517x.jpg"
+jumpToAnchor: "Pictures"
+jumpToAnchorText: "See The Pictures"
 ---
