@@ -4,40 +4,55 @@ import PropTypes from "prop-types";
 import { Container, Row, Col } from "react-bootstrap";
 import * as SocialIcons from "components/SocialIcons";
 
+import "./Footer.scss";
+
 const Footer = ({ frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
 
-  const {
+  const { 
     copyright,
-    privacyHref,
-    privacyText,
-    termsHref,
-    termsText,
-    social: { facebook, github, linkedin, medium, twitter },
-  } = frontmatter;
+    social: { facebook, github, linkedin, instagram }
+   } = frontmatter;
 
   return (
     <footer className="footer py-3">
       <Container>
         <Row className="align-items-center text-center">
-          <Col lg={5} className="text-lg-left">
-            {copyright}
-          </Col>
-          <Col lg={3} className="my-3 my-lg-0">
-            {twitter ? <SocialIcons.Twitter userName={twitter} /> : null}
-            {facebook ? <SocialIcons.Facebook userName={facebook} /> : null}
-            {linkedin ? <SocialIcons.Linkedin userName={linkedin} /> : null}
-            {github ? <SocialIcons.Github userName={github} /> : null}
-            {medium ? <SocialIcons.Medium userName={medium} /> : null}
-          </Col>
-          <Col lg={4} className="text-lg-right">
-            <a className="mr-3" href={privacyHref}>
-              {privacyText}
-            </a>
-            <a href={termsHref}>{termsText}</a>
-          </Col>
+          <Col className="copyright credit">
+            <div className="nameAndLink">
+              ©&nbsp;
+              <a 
+                href="https://caitlinfloyd.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Caitlin Floyd
+              </a>
+              , 2022
+            </div>
+            <div className="socials">
+              {github ? <SocialIcons.Github className="footerSocial" userName={github} /> : null}
+              {linkedin ? <SocialIcons.Linkedin className="footerSocial" userName={linkedin} /> : null}
+            </div>
+          </Col> {/* copyright */}
+          <Col className="anaIsabel credit">
+            <div className="nameAndLink">
+              Photos by&nbsp;
+              <a 
+                href="https://anaisabelphotography.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ana Isabel Photography
+              </a>
+            </div>
+            <div className="socials">
+              {instagram ? <SocialIcons.Instagram className="footerSocial" userName={instagram} /> : null}
+              {facebook ? <SocialIcons.Facebook className="footerSocial" userName={facebook} /> : null}
+            </div>
+          </Col> {/* anaIsabel */}
         </Row>
       </Container>
     </footer>

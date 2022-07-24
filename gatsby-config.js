@@ -15,17 +15,16 @@ module.exports = {
         trackingId,
       },
     },
-    "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: title,
-        short_name: "Agency",
+        short_name: "Caitlin & Justin",
         start_url: "/",
         background_color: "#ffffff",
-        theme_color: "#fed136",
+        theme_color: "#9ebc9f",
         display: "minimal-ui",
-        icon: "content/assets/gatsby-icon.png",
+        icon: "content/assets/images/favicon.png",
       },
     },
     "gatsby-transformer-remark",
@@ -45,45 +44,14 @@ module.exports = {
     },
     "gatsby-plugin-eslint",
     "gatsby-plugin-react-helmet",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    {
-      resolve: "gatsby-transformer-sharp",
-      options: {
-        checkSupportedExtensions: false,
-      },
-    },
     "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-sass",
       options: {
-        additionalData: `@import "core.scss";`,
-        sassOptions: {
-          includePaths: [path.resolve(__dirname, "src/style")],
-        },
-      },
-    },
-    {
-      resolve: "gatsby-omni-font-loader",
-      options: {
-        preconnect: ["https://fonts.gstatic.com"],
-        web: [
-          {
-            name: "Droid Sans",
-            file: "https://fonts.googleapis.com/css2?family=Droid+Sans&display=swap",
-          },
-          {
-            name: "Montserrat",
-            file: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap",
-          },
-          {
-            name: "Kaushan Script",
-            file: "https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap",
-          },
-          {
-            name: "Roboto Slab",
-            file: "https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap",
-          },
-        ],
+        data: `@import "core.scss";`,
+        includePaths: [path.resolve(__dirname, "src/style")],
       },
     },
     {

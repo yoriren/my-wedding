@@ -34,26 +34,40 @@ export const query = graphql`
         frontmatter {
           brand
           anchor
+          content
           copyright
           header
           imageFileName
           jumpToAnchor
           jumpToAnchorText
           menuText
-          portfolios {
-            content
-            extraInfo
-            header
-            subheader
+          highlights {
+            slideNumber
             imageFileNameDetail
             imageFileName
           }
-          privacyHref
-          privacyText
-          pictures {
-            content
-            header
-            iconName
+          gettingReady {
+            imageFileNameDetail
+            imageFileName
+          }
+          firstLook {
+            imageFileNameDetail
+            imageFileName
+          }
+          ceremony {
+            imageFileNameDetail
+            imageFileName
+          }
+          portraits {
+            imageFileNameDetail
+            imageFileName
+          }
+          reception {
+            imageFileNameDetail
+            imageFileName
+          }
+          familyPortraits {
+            imageFileNameDetail
             imageFileName
           }
           social {
@@ -62,10 +76,24 @@ export const query = graphql`
             linkedin
             medium
             twitter
+            instagram
+            website
           }
           subheader
-          termsHref
-          termsText
+          teamMember {
+            header
+            imageFileName
+            social {
+              facebook
+              github
+              linkedin
+              medium
+              twitter
+              instagram
+              website
+            }
+            subheader
+          }
           title
           timeline {
             content
@@ -84,7 +112,7 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ data, pageContext: { langKey, defaultLang, langTextMap } }) => {
+const IndexPage = ({ data, pathContext: { langKey, defaultLang, langTextMap } }) => {
   const {
     site: {
       siteMetadata: { keywords, description },
@@ -103,7 +131,7 @@ const IndexPage = ({ data, pageContext: { langKey, defaultLang, langTextMap } })
 
   return (
     <>
-      <SEO lang={langKey} title="Top" keywords={keywords} description={description} />
+      <SEO lang={langKey} title="Caitlin & Justin" keywords={keywords} description={description} />
       <Navbar
         anchors={anchors}
         frontmatter={navBarNode.frontmatter}
@@ -132,11 +160,11 @@ const IndexPage = ({ data, pageContext: { langKey, defaultLang, langTextMap } })
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
-  pageContext: PropTypes.object,
+  pathContext: PropTypes.object,
 };
 
 IndexPage.defaultProps = {
-  pageContext: {
+  pathContext: {
     langKey: "en",
     defaultLang: "en",
     langTextMap: {},

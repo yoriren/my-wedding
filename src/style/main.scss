@@ -59,7 +59,11 @@ img::-moz-selection {
 
 .btn-xl {
   font-size: 18px;
-  padding: 20px 40px;
+  line-height: 18px;
+  padding: 10px 35px;
+  .buttonTitle {
+    margin: auto;
+  }
 }
 
 .btn-primary {
@@ -72,8 +76,22 @@ img::-moz-selection {
     border-color: darken($primary, 7.5%) !important;
     color: white;
   }
-  &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+    box-shadow: 0 0 0 0.2rem rgba(158, 188, 159, 0.5) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-xl {
+    font-size: 8px;
+    line-height: 8px;
+    padding: 10px 30px;
+    .buttonTitle {
+      margin: auto;
+      font-size: 14px;
+    }
+    .buttonSubtitle {
+      font-size: 12px;
+    }
   }
 }

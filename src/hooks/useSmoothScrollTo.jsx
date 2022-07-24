@@ -7,13 +7,7 @@ const DefOptions = {
 };
 
 const useSmoothScrollTo = (anchorOrPosition, options = {}) => {
-  const opts = React.useMemo(
-    () => ({
-      ...DefOptions,
-      ...options,
-    }),
-    [options],
-  );
+  const opts = { ...DefOptions, ...options };
 
   const handleScrollTo = React.useCallback(() => {
     switch (typeof anchorOrPosition) {
