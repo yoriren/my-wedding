@@ -7,8 +7,6 @@ import Notifications, { notify } from "react-notify-toast";
 import { Row, Button } from "react-bootstrap";
 import SectionHeader from "components/SectionHeader";
 import PageSection from "components/PageSection";
-import Youtube from "content/assets/images/portfolio/Youtube.png";
-import YoutubeHover from "content/assets/images/portfolio/YoutubeHover.png";
 import "./Ceremony.scss";
 
 const Ceremony = ({ className, frontmatter }) => {
@@ -111,12 +109,12 @@ const Ceremony = ({ className, frontmatter }) => {
             <div className="joinButtonWrapper">
               <div>
                 <a
-                  href="https://www.youtube.com/watch?v=EXOL-3JyXMI&t=3660s"
+                  href="https://goo.gl/maps/pX8osTks4MN9Fr5P9"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <Button size="xl" variant="primary" className="text-uppercase main-button join-now">
-                    <p className="buttonTitle">Watch the Ceremony</p>
+                    <p className="buttonTitle">Google Maps Location</p>
                   </Button> <br/>
                 </a>
               </div>
@@ -128,88 +126,25 @@ const Ceremony = ({ className, frontmatter }) => {
               
               <div className="vendors">
                 <p className="singleVendor">
-                  Hosted at
-                  <a
-                    href="https://www.strathmore.org/mansion"
-                    className="countdownLinks"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    the Mansion at Strathmore
-                  </a>
+                  Cordially invite you to our wedding dinner at
                 </p> {/* singleVendor */}
                 <p className="singleVendor">
-                  Officiated by 
-                  <a 
-                    href="https://elleweds.wixsite.com/elleweds"
-                    className="countdownLinks"
-                    target="_blank"
-                    rel="noreferrer">
-                      Elle is for Love
-                  </a>
+                  Hee Lai Ton Restaurant @Shaw Parade
                 </p> {/* singleVendor */}
                 <p className="singleVendor">
-                  Music provided by
-                  <a
-                    href="http://cellobosco.com/"
-                    className="countdownLinks"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Carol Anne Bosco
-                  </a>
-                  &nbsp;and
-                  <a
-                    href="https://nickmontopoli.com/"
-                    className="countdownLinks"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Nick Montopoli
-                  </a>
+                  3rd floor, Shaw Parade,
+				  Jalan Changkat Thambi Dollah,
+				  55100 Kuala Lumpur.
                 </p> {/* singleVendor */}
                 <p className="singleVendor">
-                  Photos by
-                  <a
-                    href="https://anaisabelphotography.com/"
-                    className="countdownLinks"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Ana Isabel Photography
-                  </a>
+                  On Sunday, 18th September 2022
+				  at 7.00pm sharp
                 </p> {/* singleVendor */}
               </div> {/* vendors */}
             </span> {/* finished countdown */}
           </Row> {/* vendorDiv */}
           <Row className="videoDiv">
-            <a
-              href="https://www.youtube.com/watch?v=EXOL-3JyXMI&t=3660s"
-              target="_blank"
-              rel="noreferrer"
-              className="youtubeLink"
-            >
-              <div
-                className="container"
-              >
-                <img 
-                  src={Youtube} 
-                  alt="youtubeLink" 
-                  className="image"
-                  width="560" 
-                  height="auto"
-                />
-                <div className="middle">
-                  <img 
-                    src={YoutubeHover} 
-                    alt="youtubeLink" 
-                    className="imageHover"
-                    width="560" 
-                    height="auto"
-                  />
-                </div> {/* middle */}
-              </div> {/* container */}
-            </a>
+           <iframe title="google maps" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3983.8301685989904!2d101.7129511!3d3.1395095!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfbc38e88b38749a!2sHee%20Lai%20Ton%20Restaurant%20%40Shaw%20Parade!5e0!3m2!1sms!2smy!4v1659102261919!5m2!1sms!2smy" width="600" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"/>
           </Row> {/* videoDiv */}
         </div> {/* countdownAndVideoDiv */}
       </PageSection>

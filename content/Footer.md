@@ -1,9 +1,9 @@
 ---
-copyright: "© Caitlin Floyd, 2020"
+copyright: "© Jun & Ireen, 2022"
 social: {
-    facebook: "AnaIsabelPhoto",
-    instagram: "anaisabelphotography",
-    linkedin: "caitlinfloyd",
-    github: "cafloyd/", 
+    facebook: "#",
+    instagram: "#",
+    linkedin: "#",
+    github: "#", 
 }
 ---

@@ -18,7 +18,7 @@ const ImageCard = ({ className, imageFileName, imageAlt, header, subheader, extr
               <div className="intro-lead-in text-uppercase">{subheader}</div>
               <div className="text-uppercase">
                 <div className="date">
-                  Dec. 13, 2020
+                  18th September 2022
                 </div> {/* date */}
               </div>
             </div> {/* intro-text-no-button */}

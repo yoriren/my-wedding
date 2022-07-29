@@ -1,4 +1,4 @@
 ---
-brand: "Caitlin & Justin"
+brand: "Jun & Ireen"
 menuText: "Menu "
 ---

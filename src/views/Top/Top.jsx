@@ -18,13 +18,13 @@ const Top = ({ frontmatter }) => {
   const extraInfoPart = (
     <div className="buttonsWrapper">
       <a
-        href="https://www.youtube.com/watch?v=EXOL-3JyXMI&t=3660s"
+        href="https://goo.gl/maps/pX8osTks4MN9Fr5P9"
         target="_blank"
         rel="noreferrer"
         className="individButtonWrapper"
       >
         <Button size="xl" variant="primary" className="text-uppercase main-button hero-button">
-          <p className="buttonTitle">Watch the Ceremony</p>
+          <p className="buttonTitle">Wedding Dinner Location</p>
         </Button>
       </a>
       <div className="individButtonWrapper">
