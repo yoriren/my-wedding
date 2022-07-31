@@ -13,470 +13,179 @@ class PhotoSections extends Component {
     super();
 
     this.state = {
-      showGettingReady: false,
-      showFirstLook: false,
-      showCeremony: false,
-      showPortraits: false,
-      showReception: false,
-      showFamilyPortraits: false,
+      showSet1: false,
+      showSet2: false,
+      showSet3: false,
     };
-    this.toggleGettingReady = this.toggleGettingReady.bind(this);
-    this.toggleFirstLook = this.toggleFirstLook.bind(this);
-    this.toggleCeremony = this.toggleCeremony.bind(this);
-    this.togglePortraits = this.togglePortraits.bind(this);
-    this.toggleReception = this.toggleReception.bind(this);
-    this.toggleFamilyPortraits = this.toggleFamilyPortraits.bind(this);
+    this.toggleSet1 = this.toggleSet1.bind(this);
+    this.toggleSet2 = this.toggleSet2.bind(this);
+    this.toggleSet3 = this.toggleSet3.bind(this);
   }
 
-  toggleGettingReady() {
+  toggleSet1() {
     this.setState({
-      showGettingReady: !this.state.showGettingReady,
-      showFirstLook: false,
-      showCeremony: false,
-      showPortraits: false,
-      showReception: false,
-      showFamilyPortraits: false,
+      showSet1: !this.state.showSet1,
+      showSet2: false,
+      showSet3: false,
     })
   }
 
-  toggleFirstLook() {
+  toggleSet2() {
     this.setState({
-      showGettingReady: false,
-      showFirstLook: !this.state.showFirstLook,
-      showCeremony: false,
-      showPortraits: false,
-      showReception: false,
-      showFamilyPortraits: false,
+      showSet1: false,
+      showSet2: !this.state.showSet2,
+      showSet3: false,
     })
   }
 
-  toggleCeremony() {
+  toggleSet3() {
     this.setState({
-      showGettingReady: false,
-      showFirstLook: false,
-      showCeremony: !this.state.showCeremony,
-      showPortraits: false,
-      showReception: false,
-      showFamilyPortraits: false,
-    })
-  }
-
-  togglePortraits() {
-    this.setState({
-      showGettingReady: false,
-      showFirstLook: false,
-      showCeremony: false,
-      showPortraits: !this.state.showPortraits,
-      showReception: false,
-      showFamilyPortraits: false,
-    })
-  }
-
-  toggleReception() {
-    this.setState({
-      showGettingReady: false,
-      showFirstLook: false,
-      showCeremony: false,
-      showPortraits: false,
-      showReception: !this.state.showReception,
-      showFamilyPortraits: false,
-    })
-  }
-
-  toggleFamilyPortraits() {
-    this.setState({
-      showGettingReady: false,
-      showFirstLook: false,
-      showCeremony: false,
-      showPortraits: false,
-      showReception: false,
-      showFamilyPortraits: !this.state.showFamilyPortraits,
+      showSet1: false,
+      showSet2: false,
+      showSet3: !this.state.showSet3,
     })
   }
   
 
   render() {
     // FOR TEMPLATE: add "subheader: rootSubHeader" inside const below:
-    const { gettingReady, firstLook, ceremony, portraits, reception, familyPortraits } = this.props;
-    if (this.state.showGettingReady){
+    const { Set1, Set2, Set3} = this.props;
+    if (this.state.showSet1){
         return (
             <div className="photo-section-wrapper">
                 <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p><FontAwesomeIcon icon="caret-up" className="caret-up" />
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleSet1}>
+                        <p className="buttonTitle">Set 1</p><FontAwesomeIcon icon="caret-up" className="caret-up" />
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet2}>
+                        <p className="buttonTitle">Set 2</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
-                    </Button> 
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet3}>
+                        <p className="buttonTitle">Set 3</p>
+                    </Button>  
                     <br/>
                 </Row>
                 <Row id="gallery" data-toggle="modal" data-target="#photoGallery">
-                {gettingReady.map(
+                {Set1.map(
                     ({ slideNumber, imageFileName, imageFileNameDetail }) => (
                     <PhotoItem
                         key={slideNumber}
                         imageFileName={imageFileName}
                         imageFileNameDetail={imageFileNameDetail}
-                        gettingReady={gettingReady}
+                        Set1={Set1}
                     />
                     ),
                 )}
                 </Row>
                 <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleSet1}>
+                        <p className="buttonTitle">Set 1</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet2}>
+                        <p className="buttonTitle">Set 2</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
-                    </Button> 
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet3}>
+                        <p className="buttonTitle">Set 3</p>
+                    </Button>  
                     <br/>
                 </Row>
             </div> 
         )
-    } // gettingReady
-    if (this.state.showFirstLook){
+    } // Set1
+    if (this.state.showSet2){
         return (
             <div className="photo-section-wrapper">
                 <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet1}>
+                        <p className="buttonTitle">Set 1</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleSet2}>
+                        <p className="buttonTitle">Set 2</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet3}>
+                        <p className="buttonTitle">Set 3</p>
                     </Button> 
                     <br/>
                 </Row>
                 <Row id="gallery" data-toggle="modal" data-target="#photoGallery">
-                {firstLook.map(
+                {Set2.map(
                     ({ slideNumber, imageFileName, imageFileNameDetail }) => (
                     <PhotoItem
                         key={slideNumber}
                         imageFileName={imageFileName}
                         imageFileNameDetail={imageFileNameDetail}
-                        firstLook={firstLook}
+                        Set2={Set2}
                     />
                     ),
                 )}
                 </Row>
                 <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet1}>
+                        <p className="buttonTitle">Set 1</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleSet2}>
+                        <p className="buttonTitle">Set 2</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet3}>
+                        <p className="buttonTitle">Set 3</p>
                     </Button> 
                     <br/>
                 </Row>
             </div> 
         )
-    } // firstLook
-    if (this.state.showCeremony){
+    } // Set2
+    if (this.state.showSet3){
         return (
             <div className="photo-section-wrapper">
                 <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet1}>
+                        <p className="buttonTitle">Set 1</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet2}>
+                        <p className="buttonTitle">Set 2</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleSet3}>
+                        <p className="buttonTitle">Set 3</p>
                     </Button> 
                     <br/>
                 </Row>
                 <Row id="gallery" data-toggle="modal" data-target="#photoGallery">
-                {ceremony.map(
+                {Set3.map(
                     ({ slideNumber, imageFileName, imageFileNameDetail }) => (
                     <PhotoItem
                         key={slideNumber}
                         imageFileName={imageFileName}
                         imageFileNameDetail={imageFileNameDetail}
-                        ceremony={ceremony}
+                        Set3={Set3}
                     />
                     ),
                 )}
                 </Row>
                 <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet1}>
+                        <p className="buttonTitle">Set 1</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet2}>
+                        <p className="buttonTitle">Set 2</p>
                     </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
+                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleSet3}>
+                        <p className="buttonTitle">Set 3</p>
                     </Button> 
                     <br/>
                 </Row>
             </div> 
         )
-    } // ceremony
-    if (this.state.showPortraits){
-        return (
-            <div className="photo-section-wrapper">
-                <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
-                    </Button> 
-                    <br/>
-                </Row>
-                <Row id="gallery" data-toggle="modal" data-target="#photoGallery">
-                {portraits.map(
-                    ({ slideNumber, imageFileName, imageFileNameDetail }) => (
-                    <PhotoItem
-                        key={slideNumber}
-                        imageFileName={imageFileName}
-                        imageFileNameDetail={imageFileNameDetail}
-                        portraits={portraits}
-                    />
-                    ),
-                )}
-                </Row>
-                <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
-                    </Button> 
-                    <br/>
-                </Row>
-            </div> 
-        )
-    } // portraits
-    if (this.state.showReception){
-        return (
-            <div className="photo-section-wrapper">
-                <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
-                    </Button> 
-                    <br/>
-                </Row>
-                <Row id="gallery" data-toggle="modal" data-target="#photoGallery">
-                {reception.map(
-                    ({ slideNumber, imageFileName, imageFileNameDetail }) => (
-                    <PhotoItem
-                        key={slideNumber}
-                        imageFileName={imageFileName}
-                        imageFileNameDetail={imageFileNameDetail}
-                        reception={reception}
-                    />
-                    ),
-                )}
-                </Row>
-                <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
-                    </Button> 
-                    <br/>
-                </Row>
-            </div> 
-        )
-    } // reception
-    if (this.state.showFamilyPortraits){
-        return (
-            <div className="photo-section-wrapper">
-                <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
-                    </Button> 
-                    <br/>
-                </Row>
-                <Row id="gallery" data-toggle="modal" data-target="#photoGallery">
-                {familyPortraits.map(
-                    ({ slideNumber, imageFileName, imageFileNameDetail }) => (
-                    <PhotoItem
-                        key={slideNumber}
-                        imageFileName={imageFileName}
-                        imageFileNameDetail={imageFileNameDetail}
-                        familyPortraits={familyPortraits}
-                    />
-                    ),
-                )}
-                </Row>
-                <Row className="justify-content-center button-wrapper">
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                        <p className="buttonTitle">Getting Ready</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                        <p className="buttonTitle">First Look</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                        <p className="buttonTitle">Ceremony</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                        <p className="buttonTitle">Portraits</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                        <p className="buttonTitle">Reception</p>
-                    </Button> 
-                    <Button size="sm" variant="primary" className="text-uppercase main-button show-hide selected" onClick={this.toggleFamilyPortraits}>
-                        <p className="buttonTitle">Family Portraits</p>
-                    </Button> 
-                    <br/>
-                </Row>
-            </div> 
-        )
-    } // familyPortraits
+    } // Set3
     return (
         <Row className="justify-content-center button-wrapper">
-            <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleGettingReady}>
-                <p className="buttonTitle">Getting Ready</p>
+            <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet1}>
+                <p className="buttonTitle">Set 1</p>
             </Button> 
-            <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFirstLook}>
-                <p className="buttonTitle">First Look</p>
+            <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet2}>
+                <p className="buttonTitle">Set 2</p>
             </Button> 
-            <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleCeremony}>
-                <p className="buttonTitle">Ceremony</p>
-            </Button> 
-            <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.togglePortraits}>
-                <p className="buttonTitle">Portraits</p>
-            </Button> 
-            <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleReception}>
-                <p className="buttonTitle">Reception</p>
-            </Button> 
-            <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleFamilyPortraits}>
-                <p className="buttonTitle">Family Portraits</p>
+            <Button size="sm" variant="primary" className="text-uppercase main-button show-hide" onClick={this.toggleSet3}>
+                <p className="buttonTitle">Set 3</p>
             </Button> 
             <br/>
         </Row>
@@ -485,21 +194,15 @@ class PhotoSections extends Component {
 
 
 PhotoSections.propTypes = {
-  gettingReady: PropTypes.object,
-  firstLook: PropTypes.object,
-  ceremony: PropTypes.object,
-  portraits: PropTypes.object, 
-  reception: PropTypes.object,
-  familyPortraits: PropTypes.object, 
+  Set1: PropTypes.object,
+  Set2: PropTypes.object,
+  Set3: PropTypes.object,
 };
 
 PhotoSections.defaultProps = {
-    gettingReady: null,
-    firstLook: null,
-    ceremony: null,
-    portraits: null,
-    reception: null,
-    familyPortraits: null,
+    Set1: null,
+    Set2: null,
+    Set3: null,
 };
 
 export default PhotoSections;

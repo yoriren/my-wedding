@@ -81,15 +81,7 @@ const PhotoDetailDialog = ({
                   alt={imageAlt || header || subheader}
                 />
                   <div>
-                    <p className="photoCaption">Photo courtesy&nbsp;
-                      <a 
-                        href="https://anaisabelphotography.com/"
-                        className="countdownLinks"
-                        target="_blank"
-                        rel="noreferrer"
-                        >
-                        Ana Isabel Photography
-                      </a>
+                    <p className="photoCaption">Copyright ©&nbsp; Jun&Ireen 2022. All rights reserved
                     </p>
                   </div>
               </div> {/* container */}

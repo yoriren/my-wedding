@@ -16,7 +16,7 @@ const Photos = ({ className, frontmatter}) =>{
   }
 
   // FOR TEMPLATE: add "subheader: rootSubHeader" inside const below:
-  const { anchor, header: rootHeader, highlights, gettingReady, firstLook, ceremony, portraits, reception, familyPortraits } = frontmatter;
+  const { anchor, header: rootHeader, highlights, Set1, Set2, Set3, portraits, reception, familyPortraits } = frontmatter;
 
   return (
     <PageSection className={clsx("photos-section", className)} id={anchor}>
@@ -29,14 +29,7 @@ const Photos = ({ className, frontmatter}) =>{
       </Row>
       <Row>
         <Col>
-          <h3 className="section-subheading text-muted">All photos provided by&nbsp;
-            <a
-              href="https://anaisabelphotography.com/"
-              target="_blank"
-              rel="noreferrer"
-              >
-              Ana Isabel Photography
-            </a>
+          <h3 className="section-subheading text-muted">Total 70 photos
           </h3>
         </Col>
       </Row>
@@ -54,7 +47,7 @@ const Photos = ({ className, frontmatter}) =>{
         )}
       </Row> {/* highlightsGallery */}
       <Row>
-        <PhotoSections gettingReady={gettingReady} firstLook={firstLook} ceremony={ceremony} portraits={portraits} reception={reception} familyPortraits={familyPortraits} />
+        <PhotoSections Set1={Set1} Set2={Set2} Set3={Set3} portraits={portraits} reception={reception} familyPortraits={familyPortraits} />
       </Row>
     </PageSection>
   );

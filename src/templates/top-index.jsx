@@ -45,27 +45,15 @@ export const query = graphql`
             imageFileNameDetail
             imageFileName
           }
-          gettingReady {
+          Set1 {
             imageFileNameDetail
             imageFileName
           }
-          firstLook {
+          Set2 {
             imageFileNameDetail
             imageFileName
           }
-          ceremony {
-            imageFileNameDetail
-            imageFileName
-          }
-          portraits {
-            imageFileNameDetail
-            imageFileName
-          }
-          reception {
-            imageFileNameDetail
-            imageFileName
-          }
-          familyPortraits {
+          Set3 {
             imageFileNameDetail
             imageFileName
           }

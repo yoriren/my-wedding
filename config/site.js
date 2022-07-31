@@ -1,11 +1,11 @@
 module.exports = {
-  title: "Caitlin & Justin",
+  title: "Jun & Ireen",
   keywords: [
-    "Caitlin Floyd",
-    "Justin Vazquez"
+    "Jun",
+    "Ireen"
   ],
-  description: "Wedding website of Caitlin Floyd and Justin Vazquez",
-  author: "Caitlin Floyd",
+  description: "Wedding website of Jun and Ireen",
+  author: "Jun",
   trackingId: "UA-119418003-5",
   defaultLang: "en",
 };
